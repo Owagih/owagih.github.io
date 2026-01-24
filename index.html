@@ -157,17 +157,30 @@
   </div>
 
   <script>
-    const projects = [
-      {
-        title: "Smart Fan Control (PWM)",
-        desc: "Temperature-based fan controller using PWM + safe 10–12V interfacing with transistors.",
-        tags: ["PWM", "Sensors", "Embedded", "Hardware Interfacing"],
-        repo: "", // paste GitHub repo link later
-        media: [
-          { type: "image", src: "media/fan-1.jpg", alt: "Fan project photo" },
-          { type: "video", src: "media/fan-demo.mp4", alt: "Fan demo video" }
-        ]
-      },
+const projects = [
+  {
+    title: "Digital Student ID Display (7-Segment)",
+    desc: "Designed a digital logic circuit to display a student ID on a single 7-segment display. Verified the design in Multisim, then built and tested the physical circuit for correct segment mapping.",
+    tags: ["Digital Logic", "7-Segment", "Multisim", "Circuit Design"],
+    repo: "",
+    media: [
+      { type: "image", src: "media/sevenseg-multisim.png", alt: "7-segment Multisim schematic" },
+      { type: "image", src: "media/sevenseg-circuit.jpg", alt: "Physical 7-segment circuit" },
+      { type: "video", src: "media/sevenseg-demo.mp4", alt: "7-segment demo video" }
+    ]
+  },
+  {
+    title: "STM32 PWM Fan Controller",
+    desc: "Built a fan control system using an STM32 microcontroller and external hardware. Implemented PWM-based control and tested the full setup on a breadboard.",
+    tags: ["STM32", "PWM", "Embedded Systems", "Hardware Interfacing"],
+    repo: "",
+    media: [
+      { type: "image", src: "media/fan-stm32.jpeg", alt: "STM32 controller setup" },
+      { type: "image", src: "media/fan-circuit.jpeg", alt: "Fan circuit on breadboard" }
+    ]
+  }
+];
+,
       {
         title: "Reaction Time & Tic-Tac-Toe (STM32)",
         desc: "Interactive STM32 apps with touchscreen LCD, real-time input handling, and UI output.",
