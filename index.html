@@ -884,6 +884,62 @@
       .edu-card { grid-template-columns: 1fr; }
     }
 
+
+    /* ── EXPERIENCE READ MORE ───────────────────────────────────── */
+    .exp-item--clickable {
+      cursor: none;
+      transition: background 0.2s, border-left-color 0.2s;
+      border-left: 2px solid transparent;
+      padding-left: calc(var(--col-gap) * 0 + 0px);
+    }
+    .exp-item--clickable:hover {
+      background: var(--bg-raise);
+      border-left-color: var(--accent);
+    }
+    .exp-main { display: flex; flex-direction: column; gap: 0.75rem; }
+    .exp-read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: none;
+      border: 1px solid var(--border-mid);
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      padding: 0.45rem 0.9rem;
+      border-radius: var(--radius);
+      cursor: none;
+      transition: color 0.2s, border-color 0.2s;
+      align-self: flex-start;
+      margin-top: 0.25rem;
+    }
+    .exp-read-more:hover { color: var(--accent); border-color: var(--accent); }
+
+
+    /* Video in panel gallery */
+    .panel-gallery-video {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .panel-gallery-video video {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+    }
+    .panel-gallery-video-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--muted);
+      padding: 0.4rem 0.6rem;
+      letter-spacing: 0.06em;
+    }
+
   </style>
 </head>
 <body>
@@ -900,8 +956,8 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#projects">Projects</a></li>
         <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="https://linkedin.com/in/omar-mohammed-4144b627b" target="_blank" rel="noopener" style="color:var(--accent)">LinkedIn ↗</a></li>
@@ -945,8 +1001,8 @@
 
       <div class="hero-cta">
         <a href="https://linkedin.com/in/omar-mohammed-4144b627b" target="_blank" rel="noopener" class="btn btn-primary">LinkedIn ↗</a>
-        <a href="#projects" class="btn btn-outline btn-hover-scale">My work</a>
         <a href="#experience" class="btn btn-outline btn-hover-scale">My experience</a>
+        <a href="#projects" class="btn btn-outline btn-hover-scale">My projects</a>
         <a href="#" class="btn btn-outline" target="_blank" rel="noopener">Resume ↗</a>
       </div>
 
@@ -970,6 +1026,83 @@
     <div class="scroll-cue" aria-hidden="true">
       <div class="scroll-cue-line"></div>
       <span>scroll</span>
+    </div>
+  </section>
+
+  <!-- ── EXPERIENCE ────────────────────────────────────────────── -->
+  <section id="experience">
+    <div class="container">
+      <p class="section-label reveal">Work experience</p>
+      <div class="exp-list">
+
+        <!-- E-VAS -->
+        <div class="exp-item exp-item--clickable reveal" data-exp="evas">
+          <div class="exp-aside">
+            <strong>May – Aug 2026</strong>
+            Cairo, Egypt
+            <br>Full-time Intern
+            <div class="exp-progress" style="margin-top:1rem">
+              <div class="exp-progress-fill" data-width="100"></div>
+            </div>
+            <div style="margin-top:0.75rem;font-size:1.3rem">🇪🇬</div>
+          </div>
+          <div class="exp-main">
+            <p class="exp-role">AI &amp; Industrial IoT Engineer Intern</p>
+            <p class="exp-company">E-VAS Telecom</p>
+            <ul class="exp-bullets">
+              <li>Architected <strong>production RAG pipelines</strong> using LangChain — proprietary maintenance manuals embedded via Gemma &amp; OpenAI models, stored in Qdrant and ChromaDB, retrieved through a re-ranking chain.</li>
+              <li>Built <strong>MCP-based LLM agent pipelines</strong> with structured tool access to live sensor streams and operational databases — powering an Industrial Copilot for plant operators.</li>
+              <li>Developed <strong>n8n automation workflows</strong> for data ingestion, anomaly alerting, AI inference routing, and cross-system integration across factory operations.</li>
+            </ul>
+            <button class="exp-read-more" data-exp="evas">Read full story <span class="pcard-arrow">→</span></button>
+          </div>
+        </div>
+
+        <!-- Cypod -->
+        <div class="exp-item exp-item--clickable reveal" data-exp="cypod">
+          <div class="exp-aside">
+            <strong>May – Aug 2025</strong>
+            Holmestrand, Norway
+            <br>Co-op
+            <div class="exp-progress" style="margin-top:1rem">
+              <div class="exp-progress-fill" data-width="75"></div>
+            </div>
+            <div style="margin-top:0.75rem;font-size:1.3rem">🇳🇴</div>
+          </div>
+          <div class="exp-main">
+            <p class="exp-role">Embedded Software Developer Co-op</p>
+            <p class="exp-company">Cypod Solutions</p>
+            <ul class="exp-bullets">
+              <li>Developed <strong>embedded C/C++ firmware</strong> for CyLock — a GPS-tracked smart container lock with condition-based unlocking and hardware-integrated control logic.</li>
+              <li>Tested, debugged, and validated firmware on real hardware while collaborating with hardware and systems teams — contributed to a shipping commercial product.</li>
+            </ul>
+            <button class="exp-read-more" data-exp="cypod">Read full story <span class="pcard-arrow">→</span></button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Education card -->
+      <div class="edu-card reveal" style="margin-top:3rem">
+        <div class="edu-card-left">
+          <p class="exp-company" style="margin-bottom:0.25rem">McMaster University</p>
+          <p class="exp-role" style="font-size:0.95rem">BEng Mechatronics Engineering</p>
+          <p style="font-family:var(--font-mono);font-size:11px;color:var(--muted);margin-top:0.25rem">Hamilton, ON &nbsp;·&nbsp; 2023 – Apr 2027</p>
+        </div>
+        <div class="edu-card-right">
+          <div class="edu-facts">
+            <div class="edu-fact">
+              <span class="edu-fact-label">Coursework</span>
+              <span class="edu-fact-val">Embedded Systems Design · Control Systems · Digital Logic · Microcontrollers · Signals &amp; Systems · Software Design</span>
+            </div>
+            <div class="edu-fact">
+              <span class="edu-fact-label">Athletics</span>
+              <span class="edu-fact-val">Varsity swimmer (Year 1) · 3× National Champion with Wadi Degla Sporting Club (ages 17, 18, 19)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -1092,8 +1225,30 @@
           <button class="pcard-cta">Read the full story <span class="pcard-arrow">→</span></button>
         </div>
 
-        <!-- Card 6: STM32 Suite -->
-        <div class="pcard reveal d5" data-project="stm32">
+        <!-- Card 6: Seven-Segment Display -->
+        <div class="pcard reveal d5" data-project="sevenseg">
+          <div class="pcard-top">
+            <span class="pcard-tag">Academic Project</span>
+            <span class="pcard-period">2024</span>
+          </div>
+          <h3 class="pcard-title">Student ID Seven-Segment Display</h3>
+          <p class="pcard-hook">
+            Sequenced a full student ID digit-by-digit on a single seven-segment display —
+            designed with K-maps, minimized to NAND-only logic for transistor efficiency,
+            simulated on a circuit simulator, then built and verified on a breadboard.
+          </p>
+          <div class="pcard-pills">
+            <span class="pcard-pill">Digital Logic</span>
+            <span class="pcard-pill">K-maps</span>
+            <span class="pcard-pill">NAND-only Design</span>
+            <span class="pcard-pill">Circuit Simulation</span>
+            <span class="pcard-pill">Breadboard</span>
+          </div>
+          <button class="pcard-cta">Read the full story <span class="pcard-arrow">→</span></button>
+        </div>
+
+        <!-- Card 7: STM32 Suite -->
+        <div class="pcard reveal d1" data-project="stm32">
           <div class="pcard-top">
             <span class="pcard-tag">Academic Project</span>
             <span class="pcard-period">2024 – 2025</span>
@@ -1119,7 +1274,89 @@
 
   <!-- ── PROJECT DETAIL PANELS ─────────────────────────────────── -->
 
-  <!-- Backdrop -->
+  <!-- ── EXPERIENCE PANELS ────────────────────────────────────── -->
+
+  <!-- Panel: E-VAS -->
+  <div class="detail-panel" id="panel-exp-evas">
+    <div class="panel-inner">
+      <button class="panel-close" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="panel-header">
+        <span class="project-tag">Full-time Intern · May – Aug 2026 · Cairo, Egypt 🇪🇬</span>
+        <h2 class="panel-title">AI &amp; Industrial IoT Engineer Intern</h2>
+        <p style="font-family:var(--font-mono);font-size:13px;color:var(--accent);margin-top:0.5rem">E-VAS Telecom</p>
+        <div class="tech-list" style="margin-top:1rem">
+          <span class="tech-pill">LangChain</span><span class="tech-pill">RAG</span>
+          <span class="tech-pill">MCP</span><span class="tech-pill">Qdrant</span>
+          <span class="tech-pill">ChromaDB</span><span class="tech-pill">Ollama</span>
+          <span class="tech-pill">n8n</span><span class="tech-pill">Python</span>
+          <span class="tech-pill">IIoT · PLCs</span>
+        </div>
+      </div>
+      <div class="panel-body">
+        <div class="star-block">
+          <div class="star-item">
+            <div class="star-label">Situation</div>
+            <p class="star-text">Cement plants, energy facilities, and process-industry sites generate enormous volumes of sensor data — temperature, vibration, pressure, energy consumption — yet operators relied on periodic manual inspections and reactive maintenance. <strong>Equipment failures were causing unplanned downtime with no unified intelligence layer to surface predictive signals from the noise.</strong></p>
+          </div>
+          <div class="star-item">
+            <div class="star-label">Task</div>
+            <p class="star-text">Own the full stack — from PLC and sensor connectivity at the factory floor to AI-driven analytics and an operator-facing copilot — with the mandate to make it <strong>production-ready for real industrial clients</strong>, not just a proof of concept.</p>
+          </div>
+          <div class="star-item">
+            <div class="star-label">Action</div>
+            <p class="star-text">Built <strong>production RAG pipelines</strong> using <strong>LangChain</strong> — embedding proprietary maintenance manuals and fault logs via Gemma and OpenAI embedding models, storing in <strong>Qdrant and ChromaDB</strong>, and serving grounded operator responses through a retrieval + re-ranking chain. Layered <strong>MCP agent pipelines</strong> on top, giving LLMs structured tool access to live sensor streams and operational databases. Deployed <strong>local LLMs via Ollama</strong> for air-gapped factory environments. Automated the full data flow using <strong>n8n</strong> orchestration workflows. Tied everything into equipment health dashboards covering KPIs, fault detection, and predictive maintenance signals.</p>
+          </div>
+          <div class="star-item">
+            <div class="star-label">Result</div>
+            <p class="star-text">Delivered a <strong>factory-floor-to-cloud intelligence platform</strong> across <strong>3 industrial client sites</strong> in cement and energy sectors. The RAG-powered Copilot reduced operator time-to-insight on anomaly alerts, enabling equipment teams to act on fault signals <strong>before unplanned downtime occurred</strong> — shifting operations from reactive to proactive.<span class="result-note">→ Add your real metric here when you have it</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Panel: Cypod -->
+  <div class="detail-panel" id="panel-exp-cypod">
+    <div class="panel-inner">
+      <button class="panel-close" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="panel-header">
+        <span class="project-tag">Co-op · May – Aug 2025 · Holmestrand, Norway 🇳🇴</span>
+        <h2 class="panel-title">Embedded Software Developer Co-op</h2>
+        <p style="font-family:var(--font-mono);font-size:13px;color:var(--accent);margin-top:0.5rem">Cypod Solutions</p>
+        <div class="tech-list" style="margin-top:1rem">
+          <span class="tech-pill">Embedded C</span><span class="tech-pill">C++</span>
+          <span class="tech-pill">GPS</span><span class="tech-pill">Hardware Control Logic</span>
+          <span class="tech-pill">Firmware Validation</span>
+        </div>
+      </div>
+      <div class="panel-body">
+        <div class="star-block">
+          <div class="star-item">
+            <div class="star-label">Situation</div>
+            <p class="star-text">Cypod Solutions was developing <strong>CyLock</strong> — a GPS-tracked smart container lock for industrial logistics. The lock needed to evaluate real-time conditions (location, state, authorization) to allow or deny unlocking, all running on constrained embedded hardware with no room for OS overhead.</p>
+          </div>
+          <div class="star-item">
+            <div class="star-label">Task</div>
+            <p class="star-text">Write, test, and validate the <strong>embedded C/C++ firmware</strong> for CyLock — covering GPS positioning, condition-based unlock logic, and hardware-integrated actuation — collaborating directly with the hardware and systems teams on a live commercial product.</p>
+          </div>
+          <div class="star-item">
+            <div class="star-label">Action</div>
+            <p class="star-text">Implemented <strong>condition-based unlock logic</strong> evaluating GPS position against geofenced zones and external authorization signals. Developed <strong>hardware-integrated control logic</strong> for the lock actuator — handling edge cases like signal loss, boundary conditions, and fail-safe states. Ran systematic firmware validation cycles: unit-level hardware tests, integration tests with the physical lock mechanism, and field-condition simulation. Documented behavior and collaborated with the hardware team on timing constraints and signal interface requirements.</p>
+          </div>
+          <div class="star-item">
+            <div class="star-label">Result</div>
+            <p class="star-text">Delivered validated firmware for a <strong>shipping commercial product</strong> — CyLock — used in real industrial container logistics. Gained hands-on experience working inside a hardware product development cycle from firmware to field validation, in a professional team environment abroad.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Backdrop -->
   <div class="panel-backdrop" id="panelBackdrop"></div>
 
   <!-- ── PANEL: E-VAS ── -->
@@ -1217,7 +1454,72 @@
     </div>
   </div>
 
-  <!-- ── PANEL: FPGA ── -->
+  <!-- ── PANEL: SEVEN-SEGMENT ── -->
+  <div class="detail-panel" id="panel-sevenseg">
+    <div class="panel-inner">
+      <button class="panel-close" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="panel-header">
+        <span class="project-tag">Academic Project · McMaster University · 2024</span>
+        <h2 class="panel-title">Student ID Seven-Segment Display</h2>
+        <div class="tech-list" style="margin-top:1rem">
+          <span class="tech-pill">Digital Logic Design</span>
+          <span class="tech-pill">K-maps</span>
+          <span class="tech-pill">NAND-only Minimization</span>
+          <span class="tech-pill">Circuit Simulation</span>
+          <span class="tech-pill">Breadboard Implementation</span>
+          <span class="tech-pill">Seven-Segment Display</span>
+        </div>
+        <a href="#" class="project-link" style="margin-top:1.25rem;display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          GitHub (add link)
+        </a>
+      </div>
+      <div class="panel-body">
+        <!-- Screenshots from repo -->
+        <div class="panel-gallery">
+          <img src="sevenseg-multisim.png" alt="Seven-segment circuit simulation in Multisim" class="panel-gallery-img panel-gallery-img--wide" loading="lazy" />
+          <img src="sevenseg-circuit.jpg" alt="Seven-segment breadboard circuit" class="panel-gallery-img" loading="lazy" />
+          <div class="panel-gallery-video">
+            <video controls preload="none" poster="">
+              <source src="sevenseg-demo.mp4" type="video/mp4" />
+            </video>
+            <p class="panel-gallery-video-label">Live demo — breadboard</p>
+          </div>
+        </div>
+        <div class="star-block">
+          <div class="star-item">
+            <div class="star-label">Situation</div>
+            <p class="star-text">
+              The goal was to display every digit of a student ID in sequence on a <strong>single seven-segment display</strong> — no microcontroller, no code. Pure combinational and sequential logic built from discrete gates on a breadboard.
+            </p>
+          </div>
+          <div class="star-item">
+            <div class="star-label">Task</div>
+            <p class="star-text">
+              Design the complete digital logic circuit from scratch: derive truth tables for each digit's segment encoding, minimize using <strong>Karnaugh maps (K-maps)</strong>, implement exclusively with <strong>NAND gates</strong> to minimize transistor count, simulate to verify correctness before touching hardware, then build and demonstrate on a physical breadboard.
+            </p>
+          </div>
+          <div class="star-item">
+            <div class="star-label">Action</div>
+            <p class="star-text">
+              Derived the <strong>Boolean expressions</strong> for all seven segments (a–g) across each digit of the student ID. Applied <strong>K-map minimization</strong> to reduce gate count and simplify logic. Converted all expressions to <strong>NAND-only form</strong> using De Morgan's law — NAND gates use fewer transistors than AND+NOT combinations and are the standard cell in real CMOS circuits, making this a genuine engineering choice, not a constraint.<br><br>
+              Simulated the complete circuit in an <strong>online circuit simulator</strong> to verify segment sequencing and catch logic errors before committing to hardware. Once simulation passed, transferred the design to a <strong>breadboard</strong> with physical ICs, wired all gate connections manually, and verified each digit displayed correctly in sequence.
+            </p>
+          </div>
+          <div class="star-item">
+            <div class="star-label">Result</div>
+            <p class="star-text">
+              A working physical circuit that sequences through every digit of the student ID on a single seven-segment display — <strong>designed, simulated, and built end-to-end</strong> using only combinational logic. Demonstrates practical knowledge of Boolean algebra, K-map minimization, NAND universality, and the simulation-to-hardware workflow.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- ── PANEL: FPGA ── -->
   <div class="detail-panel" id="panel-fpga">
     <div class="panel-inner">
       <button class="panel-close" aria-label="Close">
@@ -1342,6 +1644,7 @@
   </div>
 
 
+
   <!-- ── SKILLS ────────────────────────────────────────────────── -->
   <section id="skills">
     <div class="container">
@@ -1463,7 +1766,7 @@
       <div class="exp-list">
 
         <!-- E-VAS -->
-        <div class="exp-item reveal">
+        <div class="exp-item exp-item--clickable reveal" data-exp="evas">
           <div class="exp-aside">
             <strong>May – Aug 2026</strong>
             Cairo, Egypt
@@ -1471,24 +1774,22 @@
             <div class="exp-progress" style="margin-top:1rem">
               <div class="exp-progress-fill" data-width="100"></div>
             </div>
-            <div class="exp-location-flag" style="margin-top:0.75rem;font-size:1.3rem" title="Egypt">🇪🇬</div>
+            <div style="margin-top:0.75rem;font-size:1.3rem">🇪🇬</div>
           </div>
-          <div>
+          <div class="exp-main">
             <p class="exp-role">AI &amp; Industrial IoT Engineer Intern</p>
             <p class="exp-company">E-VAS Telecom</p>
             <ul class="exp-bullets">
-              <li>Designed end-to-end IIoT solutions connecting <strong>PLCs, industrial sensors, and edge devices</strong> to centralized AI analytics platforms — serving cement, energy, and process-industry clients.</li>
-              <li>Architected <strong>production RAG pipelines</strong> using LangChain — embedding proprietary maintenance manuals and fault logs via Gemma and OpenAI embedding models, storing in Qdrant and ChromaDB, and serving grounded responses through a retrieval + re-ranking chain.</li>
-              <li>Built <strong>MCP-based LLM agent pipelines</strong> giving language models structured, tool-mediated access to live sensor streams, operational databases, and knowledge repositories for an Industrial Copilot used by plant operators.</li>
-              <li>Deployed <strong>local LLMs via Ollama</strong> (Gemma, LLaMA variants) for air-gapped industrial environments where cloud API calls were restricted.</li>
-              <li>Developed <strong>n8n automation workflows</strong> orchestrating data ingestion, anomaly alerting, AI inference routing, and cross-system integration across factory operations.</li>
-              <li>Built <strong>equipment health dashboards</strong> covering KPIs, fault signals, and predictive maintenance recommendations — shifting client operations from reactive to condition-based maintenance.</li>
+              <li>Architected <strong>production RAG pipelines</strong> using LangChain — proprietary maintenance manuals embedded via Gemma &amp; OpenAI models, stored in Qdrant and ChromaDB, retrieved through a re-ranking chain.</li>
+              <li>Built <strong>MCP-based LLM agent pipelines</strong> with structured tool access to live sensor streams and operational databases — powering an Industrial Copilot for plant operators.</li>
+              <li>Developed <strong>n8n automation workflows</strong> for data ingestion, anomaly alerting, AI inference routing, and cross-system integration across factory operations.</li>
             </ul>
+            <button class="exp-read-more" data-exp="evas">Read full story <span class="pcard-arrow">→</span></button>
           </div>
         </div>
 
         <!-- Cypod -->
-        <div class="exp-item reveal">
+        <div class="exp-item exp-item--clickable reveal" data-exp="cypod">
           <div class="exp-aside">
             <strong>May – Aug 2025</strong>
             Holmestrand, Norway
@@ -1496,22 +1797,22 @@
             <div class="exp-progress" style="margin-top:1rem">
               <div class="exp-progress-fill" data-width="75"></div>
             </div>
-            <div class="exp-location-flag" style="margin-top:0.75rem;font-size:1.3rem" title="Norway">🇳🇴</div>
+            <div style="margin-top:0.75rem;font-size:1.3rem">🇳🇴</div>
           </div>
-          <div>
+          <div class="exp-main">
             <p class="exp-role">Embedded Software Developer Co-op</p>
             <p class="exp-company">Cypod Solutions</p>
             <ul class="exp-bullets">
               <li>Developed <strong>embedded C/C++ firmware</strong> for CyLock — a GPS-tracked smart container lock with condition-based unlocking and hardware-integrated control logic.</li>
-              <li>Implemented <strong>hardware-integrated control logic</strong> handling GPS positioning, lock actuation triggers, and condition evaluation in real time on constrained embedded hardware.</li>
-              <li>Tested, debugged, and validated firmware behavior while collaborating with hardware and systems teams during live product development — contributed to a shipping commercial product.</li>
+              <li>Tested, debugged, and validated firmware on real hardware while collaborating with hardware and systems teams — contributed to a shipping commercial product.</li>
             </ul>
+            <button class="exp-read-more" data-exp="cypod">Read full story <span class="pcard-arrow">→</span></button>
           </div>
         </div>
 
       </div>
 
-      <!-- Education card — separated visually -->
+      <!-- Education card -->
       <div class="edu-card reveal" style="margin-top:3rem">
         <div class="edu-card-left">
           <p class="exp-company" style="margin-bottom:0.25rem">McMaster University</p>
@@ -1526,7 +1827,7 @@
             </div>
             <div class="edu-fact">
               <span class="edu-fact-label">Athletics</span>
-              <span class="edu-fact-val">Varsity swimmer (Year 1) while maintaining full engineering load · 3× National Champion with Wadi Degla Sporting Club (ages 17, 18, 19)</span>
+              <span class="edu-fact-val">Varsity swimmer (Year 1) · 3× National Champion with Wadi Degla Sporting Club (ages 17, 18, 19)</span>
             </div>
           </div>
         </div>
@@ -1839,7 +2140,6 @@
       panel.classList.add('open');
       backdrop.classList.add('open');
       document.body.style.overflow = 'hidden';
-      // Re-trigger reveals inside panel
       panel.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
         el.classList.add('visible');
       });
@@ -1853,10 +2153,22 @@
       activePanel = null;
     }
 
-    // Wire up card buttons
+    // Whole project card is clickable
     document.querySelectorAll('.pcard').forEach(card => {
-      card.querySelector('.pcard-cta').addEventListener('click', () => {
-        openPanel(card.dataset.project);
+      card.addEventListener('click', () => openPanel(card.dataset.project));
+    });
+
+    // Experience items — whole row clickable + button
+    document.querySelectorAll('.exp-item--clickable').forEach(item => {
+      item.addEventListener('click', (e) => {
+        // Don't double-fire if clicking the button itself (handled below too, fine)
+        openPanel('exp-' + item.dataset.exp);
+      });
+    });
+    document.querySelectorAll('.exp-read-more').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openPanel('exp-' + btn.dataset.exp);
       });
     });
 
@@ -1869,8 +2181,8 @@
       btn.addEventListener('click', () => closePanel());
     });
 
-    // Add panel elements to cursor hover list
-    document.querySelectorAll('.pcard-cta, .panel-close').forEach(el => {
+    // Cursor hover
+    document.querySelectorAll('.pcard, .pcard-cta, .panel-close, .exp-item--clickable, .exp-read-more').forEach(el => {
       el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
       el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
     });
