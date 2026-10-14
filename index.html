@@ -825,6 +825,14 @@
     }
     .panel-body {}
 
+    .coremons-cover { width: 100%; aspect-ratio: 16/9; object-fit: cover; border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; }
+    .coremons-gallery { display: grid; gap: 1.25rem; margin-bottom: 2.5rem; }
+    .coremons-gallery figure { margin: 0; }
+    .coremons-gallery img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: var(--radius); }
+    .coremons-gallery a { display: block; cursor: zoom-in; }
+    .coremons-gallery a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    .coremons-gallery figcaption { color: var(--muted); font-size: 0.8rem; line-height: 1.6; margin-top: 0.5rem; }
+
     /* Panel screenshot gallery */
     .panel-gallery {
       display: grid;
@@ -1159,6 +1167,7 @@
 
         <!-- Coremons -->
         <div class="pcard reveal d1" data-project="coremons">
+          <img class="coremons-cover" src="coremons-home.png" alt="Coremons storefront with its independent Canadian fashion campaign" loading="lazy" width="1280" height="720" />
           <div class="pcard-top">
             <span class="pcard-tag" style="color:#a78bfa;background:rgba(139,92,246,0.1);border-color:rgba(139,92,246,0.25);">Personal Project · In Progress</span>
             <span class="pcard-period">2026 – Present</span>
@@ -1372,6 +1381,13 @@
         <div class="tech-list" style="margin-top:1rem"><span class="tech-pill">React</span><span class="tech-pill">JavaScript</span><span class="tech-pill">Vite</span><span class="tech-pill">CSS</span><span class="tech-pill">Local Storage</span><span class="tech-pill">E-commerce UX</span></div>
       </div>
       <div class="panel-body">
+        <div class="coremons-gallery" aria-label="Coremons interface screenshots">
+          <figure><a href="coremons-home.png" target="_blank" rel="noopener" aria-label="Open full-size coremons homepage with wear your own world campaign"><img src="coremons-home.png" alt="Coremons homepage with Wear your own world campaign" loading="lazy" width="1280" height="720" /></a><figcaption>01 / Storefront — a product-led introduction to independent Canadian style.</figcaption></figure>
+          <figure><a href="coremons-brands.png" target="_blank" rel="noopener" aria-label="Open full-size coremons brand discovery carousel"><img src="coremons-brands.png" alt="Coremons brand discovery carousel" loading="lazy" width="1280" height="720" /></a><figcaption>02 / Brand discovery — browse each label’s visual world.</figcaption></figure>
+          <figure><a href="coremons-product.png" target="_blank" rel="noopener" aria-label="Open full-size coremons hoodie detail page with colour and size selection"><img src="coremons-product.png" alt="Coremons hoodie detail page with colour and size selection" loading="lazy" width="1280" height="720" /></a><figcaption>03 / Product details — imagery, colour options, sizing, and add to bag.</figcaption></figure>
+          <p class="pcard-hook">Screenshots from the working prototype. Products and brand presentations are sample concepts; partnerships are unconfirmed. Select an image to view it full size.</p>
+        </div>
+
         <div class="star-block">
           <div class="star-item"><div class="star-label">Vision</div><p class="star-text">Bring <strong>independent Canadian fashion brands into one shopping destination</strong>. Coremons is being built so customers can discover local labels, browse their products, and shop across brands through a shared storefront.</p></div>
           <div class="star-item"><div class="star-label">My Work</div><p class="star-text">Designing and developing the marketplace experience, from <strong>product discovery through checkout and post-purchase flows</strong>. Built the interactive frontend with React and Vite, including search, filters, colour and size selection, wishlists, a multi-brand bag, and browser-persisted shopping state.</p></div>
