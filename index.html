@@ -1157,6 +1157,28 @@
           <button class="pcard-cta">Read the full story <span class="pcard-arrow">→</span></button>
         </div>
 
+        <!-- Coremons -->
+        <div class="pcard reveal d1" data-project="coremons">
+          <div class="pcard-top">
+            <span class="pcard-tag" style="color:#a78bfa;background:rgba(139,92,246,0.1);border-color:rgba(139,92,246,0.25);">Personal Project · In Progress</span>
+            <span class="pcard-period">2026 – Present</span>
+          </div>
+          <h3 class="pcard-title">COREMONS — Canadian Fashion Marketplace</h3>
+          <p class="pcard-hook">
+            Building one destination to discover and shop independent Canadian fashion brands.
+            A multi-brand e-commerce platform in progress, with an interactive shopping journey
+            from product discovery and a shared bag to demo checkout, orders, and returns.
+          </p>
+          <div class="pcard-pills">
+            <span class="pcard-pill accent">React</span>
+            <span class="pcard-pill accent">JavaScript</span>
+            <span class="pcard-pill">Vite</span>
+            <span class="pcard-pill">E-commerce</span>
+            <span class="pcard-pill">Multi-brand Marketplace</span>
+          </div>
+          <button class="pcard-cta">Read the full story <span class="pcard-arrow">→</span></button>
+        </div>
+
         <!-- Card 3: FPGA -->
         <div class="pcard reveal d2" data-project="fpga">
           <div class="pcard-top">
@@ -1335,6 +1357,26 @@
           <div class="star-item"><div class="star-label">Task</div><p class="star-text">Build a <strong>production-grade multilingual RAG system</strong> from scratch — indexing thousands of Arabic and English documents, resolving entity aliases across both scripts, extracting typed entities with high precision, serving grounded answers with source citations — all running locally, no cloud.</p></div>
           <div class="star-item"><div class="star-label">Action</div><p class="star-text">Architected in <strong>LangChain</strong> — ingesting PDF, TXT, MD documents, chunking with overlap-aware strategies, embedding via <strong>Qwen3 Embed</strong> served via <strong>LM Studio</strong>, stored in <strong>Qdrant</strong>. Added a <strong>re-ranker</strong> before generation to sharpen cross-language retrieval precision.<br><br>Built a <strong>dual-NER pipeline</strong>: <strong>GLiNER</strong> handles English and European documents — extracting persons, organizations, facilities, legal entities, contacts, and IDs. <strong>AraBERT</strong> (trained on 80 GB Arabic data) handles Arabic — resolving name suffixes, script variants, and morphological forms. LLM layer runs <strong>Gemma4 12B via LM Studio</strong> — no API calls, no data leaving the machine.</p></div>
           <div class="star-item"><div class="star-label">Result</div><p class="star-text">Indexed <strong>61,351 vectors across 2,912 files</strong>. Stress-tested on <strong>3,000 files</strong> fully locally. Ask in English, get answers from Arabic sources. Ask for a field not in the documents — the system cites the source confirming absence. <strong>No hallucination. Grounded refusal with evidence.</strong></p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project: Coremons -->
+  <div class="detail-panel" id="panel-coremons">
+    <div class="panel-inner">
+      <button class="panel-close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <div class="panel-header">
+        <span class="project-tag" style="color:#a78bfa;background:rgba(139,92,246,0.1);border-color:rgba(139,92,246,0.25);">Personal Project · In Progress · 2026 – Present</span>
+        <h2 class="panel-title">COREMONS — Canadian Fashion Marketplace</h2>
+        <div class="tech-list" style="margin-top:1rem"><span class="tech-pill">React</span><span class="tech-pill">JavaScript</span><span class="tech-pill">Vite</span><span class="tech-pill">CSS</span><span class="tech-pill">Local Storage</span><span class="tech-pill">E-commerce UX</span></div>
+      </div>
+      <div class="panel-body">
+        <div class="star-block">
+          <div class="star-item"><div class="star-label">Vision</div><p class="star-text">Bring <strong>independent Canadian fashion brands into one shopping destination</strong>. Coremons is being built so customers can discover local labels, browse their products, and shop across brands through a shared storefront.</p></div>
+          <div class="star-item"><div class="star-label">My Work</div><p class="star-text">Designing and developing the marketplace experience, from <strong>product discovery through checkout and post-purchase flows</strong>. Built the interactive frontend with React and Vite, including search, filters, colour and size selection, wishlists, a multi-brand bag, and browser-persisted shopping state.</p></div>
+          <div class="star-item"><div class="star-label">Built So Far</div><p class="star-text">Implemented <strong>demo checkout, orders grouped into separate brand shipments, and return requests</strong>, alongside customer, brand, and admin demo views. Brand workspaces show their own label’s order lines and returns; the admin view brings sample orders together across labels.</p></div>
+          <div class="star-item"><div class="star-label">Status</div><p class="star-text"><strong>In active development.</strong> The current prototype demonstrates the end-to-end customer journey using sample products and simulated transactions. Production authentication, payments, backend services, and fulfilment integrations are planned as the platform develops toward launch.</p></div>
         </div>
       </div>
     </div>
