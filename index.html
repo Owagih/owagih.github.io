@@ -825,10 +825,9 @@
     }
     .panel-body {}
 
-    .coremons-cover { width: 100%; aspect-ratio: 16/9; object-fit: cover; border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; }
     .coremons-gallery { display: grid; gap: 1.25rem; margin-bottom: 2.5rem; }
     .coremons-gallery figure { margin: 0; }
-    .coremons-gallery img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: var(--radius); }
+    .coremons-gallery img { display: block; width: 100%; max-width: 100%; height: auto; object-fit: contain; border: 1px solid var(--border); border-radius: var(--radius); }
     .coremons-gallery a { display: block; cursor: zoom-in; }
     .coremons-gallery a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
     .coremons-gallery figcaption { color: var(--muted); font-size: 0.8rem; line-height: 1.6; margin-top: 0.5rem; }
@@ -1167,17 +1166,8 @@
 
         <!-- Coremons -->
         <div class="pcard reveal d1" data-project="coremons">
-          <img class="coremons-cover" src="coremons-home.png" alt="Coremons storefront with its independent Canadian fashion campaign" loading="lazy" width="1280" height="720" />
-          <div class="pcard-top">
-            <span class="pcard-tag" style="color:#a78bfa;background:rgba(139,92,246,0.1);border-color:rgba(139,92,246,0.25);">Personal Project · In Progress</span>
-            <span class="pcard-period">2026 – Present</span>
-          </div>
           <h3 class="pcard-title">COREMONS — Canadian Fashion Marketplace</h3>
-          <p class="pcard-hook">
-            Building one destination to discover and shop independent Canadian fashion brands.
-            A multi-brand e-commerce platform in progress, with an interactive shopping journey
-            from product discovery and a shared bag to demo checkout, orders, and returns.
-          </p>
+          <p class="pcard-hook">An in-progress marketplace bringing independent Canadian fashion brands together, with product discovery, a shared shopping bag, and demo checkout.</p>
           <div class="pcard-pills">
             <span class="pcard-pill accent">React</span>
             <span class="pcard-pill accent">JavaScript</span>
